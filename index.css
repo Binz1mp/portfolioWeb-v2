@@ -1,0 +1,339 @@
+div#resolution {
+  position: fixed;
+  color: #181818;
+  font-weight: 300;
+  background-color: #ebebeb;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #181818 !important;
+    color: #ebebeb !important;
+  }
+  a {
+    color: #ebebeb !important;
+  }
+  aside.item {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    color: #ebebeb !important;
+  }
+}
+
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+/* font-family: 'Raleway', sans-serif; */
+
+/* default css */
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  height: 100vh;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6em;
+  background-color: #ebebeb;
+  color: #181818;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #181818;
+}
+code {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  padding: 3px;
+}
+/* Reset CSS */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+/* Common CSS */
+/* section.head {
+  height: 25vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+#topvideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+.headline-share {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.headline-share h1 {
+  font-size: 56px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 40px;
+  margin-bottom: 20px;
+}
+.headline-share h1:before {
+  content: '';
+  position: absolute;
+  height: 5px;
+  width: 80px;
+  /* background-color: aquamarine; */
+  background: linear-gradient(to right, #3e85f0, #93bcfa);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.headline-share span.background-blue {
+  background-color: rgb(12, 120, 252);
+}
+.headline-share span.blink {
+  animation-name: blink;
+  animation-duration: 350ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.font-noto {
+  font-family: 'Noto Sans KR', 'sans-serif';
+  font-weight: 300;
+}
+
+/* Section: Portfolio */
+section.portfolio {
+  display: grid;
+  /* grid가 flex보다 반응형 웹 만들기에 있어선 좀 더 수월한거같음... */
+  justify-items: center;
+  height: 100vh;
+  /* height 값이 있어야 align-content, 세로 정렬이 가능 */
+  /* align-content: center; */
+  background-image: url(./images/background.png);
+  background-position: top right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-image: linear-gradient(
+    80deg,
+    hsl(240deg 40% 52%) 0%,
+    hsl(241deg 40% 55%) 4%,
+    hsl(241deg 40% 58%) 9%,
+    hsl(242deg 40% 61%) 16%,
+    hsl(242deg 39% 64%) 27%,
+    hsl(243deg 39% 67%) 46%,
+    hsl(243deg 38% 71%) 68%,
+    hsl(244deg 37% 74%) 82%,
+    hsl(245deg 35% 78%) 91%,
+    hsl(245deg 32% 81%) 96%,
+    hsl(246deg 27% 85%) 100%
+  ); */
+}
+.items {
+  width: 1280px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* fr은 fraction, 조각임. */
+  grid-gap: 30px;
+  margin-bottom: 15px;
+}
+div.intro {
+  display: grid;
+  width: 1000px;
+  grid-template-columns: repeat(1,1fr);
+}
+aside.item {
+  margin-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 15px 45px -10px rgba(0, 0, 0, 0.25);
+  grid-column: 1;
+}
+aside.item b {
+  background-color: #181818;
+  font-weight: normal;
+  color: rgb(240, 62, 62);
+  font-size: 18px;
+}
+aside.item h2 {
+  font-size: 26px;
+  margin-top: 10px;
+}
+aside.item .portfolio-info span {
+  display: list-item;
+  list-style: square;
+  margin-left: 20px;
+}
+
+.item.thum .photo {
+  width: 100%;
+  height: 400px;
+  border-radius: 15px;
+  box-shadow: 0 15px 45px -10px rgba(0, 0, 0, 0.25);
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  transition: 1s; */
+  overflow: hidden;
+}
+.item.thum .photo img {
+  transition: 1.5s;
+  width: inherit;
+  height: inherit;
+  /* object-fit 할때 부모요소 width height 무조건 명시해야 가능 */
+  object-fit: cover;
+  object-position: top;
+}
+.item.thum:hover .photo img {
+  object-position: bottom;
+}
+
+/*.item.thum:hover .photo {
+  background-position: bottom;
+}
+.item.thum:nth-of-type(1) .photo {
+  background-image: url(./images/web-portfolio-01.jpg);
+}
+.item.thum:nth-of-type(2) .photo {
+  background-image: url(./images/web-portfolio-02.jpg);
+}
+.item.thum:nth-of-type(3) .photo {
+  background-image: url(./images/web-portfolio-03.jpg);
+} */
+
+
+
+.item.thum span {
+  display: block;
+  text-align: center;
+  margin-top: 7px;
+}
+.btn-view {
+  color: aliceblue;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+.btn-view.view-pc {
+  background-color: rgb(62, 133, 240);
+}
+.btn-view.view-mobile {
+  background-color: rgb(240, 62, 62);
+}
+.btn-view.view-demo {
+  background-color: rgb(154, 62, 240);
+}
+/* footer {
+  background-color: rgb(240, 62, 62);
+  height: 100px;
+} */
+.featherlight.featherlight-iframe iframe {
+  width: 80vw;
+  height: 80vh;
+  background-color: #181818;
+}
+button.featherlight-close-icon.featherlight-close {
+  width: 50px;
+  height: 50px;
+  background-color: #181818;
+  color: #ebebeb;
+  font-size: 40px;
+  opacity: 0.5;
+  transition: opacity 0.25s;
+}
+button.featherlight-close-icon.featherlight-close:hover {
+  opacity: 1;
+}
+/* footer */
+footer {
+  border-top: 1px solid #999999;
+  position: relative;
+  display: block;
+  grid-row: 4;
+  width: 100%;
+}
+footer > div {
+  display: grid;
+  align-content: center;
+  height: 100%;
+  margin: 0;
+  padding: 7px 0;
+  text-align: center;
+  background-color: #181818;
+  color: #ebebeb;
+}
+footer .gridbox > span.seperate::before {
+  content: ' | ';
+  margin: 0 0.5em;
+  line-height: 0.9em;
+  font-weight: bold;
+}
+footer .gridbox > span.my-email {
+  cursor: pointer;
+}
+footer .gridbox > span a::after {
+  content: '';
+  background-repeat: no-repeat;
+  background-size: 100%;
+  filter: invert(80%) sepia(52%) saturate(5%) hue-rotate(77deg) brightness(105%) contrast(96%);
+  display: inline-block;
+  vertical-align: sub;
+  margin-left: 5px;
+  height:20px;
+  width:20px;
+}
+footer .gridbox > span.my-name a::after {
+  background-image: url(./images/footer-profile.svg);
+}
+footer .gridbox > span.my-email a::after {
+  background-image: url(./images/footer-copyandpaste.svg);
+}
+footer .gridbox > span.my-github a::after {
+  background-image: url(./images/footer-external_link.svg);
+}
+
+/* Nav */
+nav.topdown {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1;
+  width: 50px;
+  height: 100px;
+  background-color: rgba(24, 24, 24, 0.75);
+  border-radius: 15px;
+}
+nav.topdown div.button-top, nav.topdown div.button-down {
+  cursor: pointer;
+  content: '';
+  filter: invert(80%) sepia(52%) saturate(5%) hue-rotate(77deg) brightness(105%) contrast(96%);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 50px;
+  height: 50px;
+}
+nav.topdown div.button-top {
+  background-image: url(./images/nav-top.svg);
+}
+nav.topdown div.button-down {
+  background-image: url(./images/nav-bottom.svg);
+}

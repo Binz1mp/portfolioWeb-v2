@@ -1,0 +1,58 @@
+/* Mobile Layout */
+@media (max-width: 767px) {
+  /* Common CSS */
+  .headline-share h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+  /* Section: Portfolio */
+  section.portfolio > div {
+    align-content: start;
+    height: auto; 
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  div.intro {
+    width: 100%;
+  }
+  .items {
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr)
+  }
+  nav.topdown {
+    display: unset;
+  }
+}
+
+/* Tablet Layout */
+@media (min-width: 768px) and (max-width: 1350px) {
+  /* Common CSS */
+  .headline-share h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+  /* Section: Portfolio */
+  section.portfolio > div {
+    align-content: start;
+    height: auto; 
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  div.intro {
+    width: 80%;
+  }
+  .items {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr)
+  }
+  .item.thum:nth-of-type(3), .item.thum:nth-of-type(4) {
+    grid-column: 1 / span 2;
+  }
+  nav.topdown {
+    display: unset;
+  }
+}

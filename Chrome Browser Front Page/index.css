@@ -1,0 +1,334 @@
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+/* XEION CDN */
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+:root {
+  --main-text-color: #3c4043;
+  --main-color-blue: #1967d2;
+}
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  font-size: 16px;
+  color: var(--main-text-color);
+  line-height: 1.6em;
+  background-color: #fff;
+  /* word-break: break-word;
+  word-wrap: break-word */
+}
+a {
+  text-decoration: none;
+  color: var(--main-color-blue);
+}
+/* Reset CSS */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Common CSS */
+.btn-download {
+  background-color: var(--main-color-blue);
+  color: #fff;
+  display: inline-block;
+  width: 180px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 32px;
+  font-weight: 500;
+}
+.btn-download:hover {
+  background-color: rgb(21, 94, 167);
+}
+.read-more::after, .want-update > a::after {
+  font-family: xeicon;
+  content: '\e907';
+  margin-left: 3px;
+  transition: 0.35s;
+  /* before after는 inline 요소라서 transform이 안된다.
+  그래서 inline-block 해야된다. */
+  display: inline-block;
+}
+.read-more:hover::after, .want-update > a:hover::after {
+  transform: translateX(3px);
+}
+/* Section - feature */
+section.feature {
+  height: 500px;
+  padding: 60px 0;
+  margin: 0 100px;
+}
+section.feature div.inner {
+  height: 100%;
+  max-width: 1296px;
+  display: grid;
+  /* 여긴 flex보단 grid가 더 어울리는 듯하다. */
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  gap: 2em;
+}
+section.feature div.desc {
+  margin: 20px 100px;
+}
+section.feature div.desc p {
+  font-size: 15px;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+section.feature div.photo {
+  height: 100%;
+  overflow: hidden;
+}
+section.feature div.photo img {
+  height: 100%;
+}
+/* Header */
+header {
+  position: fixed;
+  height: 65px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.075);
+  z-index: 10;
+  padding: 0 20px;
+  top: 0;
+}
+.logo {
+  float: left;
+  margin-top: 16px;
+}
+.download {
+  float: right;
+  margin-top: 10px;
+}
+
+/* Section - Welcome */
+section.welcome {
+  height: 1125px;
+  background: linear-gradient(15.69deg, #e8f0fe 10.16%, rgba(255, 255, 255, 0) 89.84%);
+  z-index: 0;
+  position: relative;
+  margin-top: 65px;
+}
+section.welcome > .background {
+  background-repeat: no-repeat;
+  background-position: top right;
+  pointer-events: none;
+}
+section.welcome > .background > #hero-anim-top-right {
+  position: absolute;
+  z-index: -1;
+  left: 75vw;
+  right: unset;
+  top: -20%;
+  animation-duration: 10s;
+}
+section.welcome > .background > #hero-anim-middle {
+  position: absolute;
+  z-index: -1;
+  bottom: calc(50% - 80px);
+  right: 19%;
+  left: unset;
+  animation-duration: 20s;
+}
+section.welcome > .background > #hero-anim-bottom-left {
+  position: absolute;
+  z-index: -1;
+  bottom: 5%;
+  left: unset;
+  right: 75vw;
+  animation-duration: 14s;
+}
+@keyframes full-rotate-left {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.rolling-icons {
+  will-change: transform;
+  animation-name: full-rotate-left;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.heading {
+  padding-top: 50px;
+  margin: auto;
+  width: 900px;
+  text-align: center;
+}
+.heading img {
+  width: 80px;
+}
+.heading h1 {
+  font-size: 60px;
+  line-height: 1.3em;
+  margin-bottom: 0.5em;
+}
+.download-content .btn-download {
+  margin-bottom: 10px;
+}
+.download-content .want-update {
+  margin-bottom: 16px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.download-content span {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+}
+.statics {
+  font-size: 11px;
+  width: 480px;
+  margin: 0 auto;
+}
+.big_pixel_phone {
+  /* margin-top: 30px; */
+  z-index: 5;
+  margin-bottom: 20px;
+}
+.big_pixel_phone > img {
+  width: 100%;
+}
+.next-section {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.next-section a {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  color: var(--main-text-color);
+  background-color: #fff;
+  text-align: center;
+  font-size: 36px;
+  line-height: 60px;
+}
+@keyframes updown {
+  0% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
+.next-section a i {
+  animation-name: updown;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Section - feature */
+section.feature {
+  height: 500px;
+  padding: 60px 0;
+  margin: 0 75px;
+}
+section.feature div.inner {
+  height: 100%;
+  max-width: 1296px;
+  display: grid;
+  /* 여긴 flex보단 grid가 더 어울리는 듯하다. */
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  gap: 2em;
+}
+section.feature div.desc {
+  margin: 0px 65px;
+}
+section.feature div.desc h1 {
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  padding: 8px 0;
+}
+section.feature div.desc p {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  margin: 0;
+}
+section.feature div.photo {
+  height: 100%;
+  overflow: hidden;
+}
+section.feature div.photo img {
+  height: 100%;
+}
+
+/* Section - more-features */
+section.more-features {
+  width: 100%;
+  height: 700px;
+  display: block;
+  padding: 100px 0;
+}
+.features-title {
+  margin-bottom: 40px;
+  text-align: center;
+}
+.features-title p {
+  font-weight: 500;
+  margin: 0;
+}
+.features-title h1 {
+  font-size: 40px;
+  line-height: 2.75rem;
+}
+.features-cards-wrapper {
+  margin: 0 auto;
+  max-width: 1065px;
+}
+.features-cards-container-flex {
+  display: flex;
+  min-height: 355px;
+  justify-content: space-between;
+}
+.cards {
+  border: 1px solid var(--main-text-color);
+  width: 228px;
+  border-radius: 8px;
+}
+.card-contents-flex {
+  display: flex;
+  padding: 25px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.card-icon {
+  margin-bottom: 10px;
+}
+.headline {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  margin-bottom: 8px;
+}
+.card-desc {
+  margin-bottom: 60px;
+  min-height: 170px;
+}
+.card-link {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}

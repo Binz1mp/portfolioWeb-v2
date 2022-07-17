@@ -33,6 +33,9 @@ div#resolution {
   box-sizing: border-box;
   outline: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   height: 100vh;
   font-size: 15px;

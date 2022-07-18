@@ -363,7 +363,7 @@ section.callaction {
 }
 .callaction-inner a.btn-download:hover {
   background-color: #fff;
-  color: var(--main-border-color);
+  color: var(--main-text-color);
 }
 
 /* footer */

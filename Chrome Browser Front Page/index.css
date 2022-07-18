@@ -368,6 +368,8 @@ section.callaction {
 
 /* footer */
 footer {
+  padding-left: 32px;
+  padding-right: 32px;
 }
 .footer-inner {
   max-width: 1376px;
@@ -425,6 +427,7 @@ footer {
 }
 .policy {
   flex: 2;
+  margin-top: 6px;
   margin-bottom: 30px;
 }
 .policy a {
@@ -433,6 +436,7 @@ footer {
 }
 .language {
   flex: 1;
+  margin-top: 6px;
   margin-bottom: 30px;
 }
 .language a {

@@ -4,6 +4,7 @@
 @import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
 :root {
   --main-text-color: #3c4043;
+  --main-border-color: #bdc0c5;
   --main-color-blue: #1967d2;
 }
 * {
@@ -12,6 +13,7 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 body {
   font-family: 'Open Sans', sans-serif;
@@ -19,7 +21,7 @@ body {
   font-size: 16px;
   color: var(--main-text-color);
   line-height: 1.6em;
-  background-color: #fff;
+  background-color: #f9fafe;
   /* word-break: break-word;
   word-wrap: break-word */
 }
@@ -47,18 +49,19 @@ h1, h2, h3, h4, h5, h6 {
 .btn-download:hover {
   background-color: rgb(21, 94, 167);
 }
-.read-more::after, .want-update > a::after {
+.read-more::after, .want-update > a::after, .sitemap-contents a>span.arrow::after {
   font-family: xeicon;
   content: '\e907';
   margin-left: 3px;
-  transition: 0.35s;
+  transition: 0.25s;
   /* before after는 inline 요소라서 transform이 안된다.
   그래서 inline-block 해야된다. */
   display: inline-block;
 }
-.read-more:hover::after, .want-update > a:hover::after {
-  transform: translateX(3px);
+.read-more:hover::after, .want-update > a:hover::after, .sitemap-contents a:hover>span.arrow::after {
+  transform: translateX(4px);
 }
+
 /* Section - feature */
 section.feature {
   height: 500px;
@@ -91,6 +94,7 @@ section.feature div.photo {
 section.feature div.photo img {
   height: 100%;
 }
+
 /* Header */
 header {
   position: fixed;
@@ -306,7 +310,7 @@ section.more-features {
   justify-content: space-between;
 }
 .cards {
-  border: 1px solid var(--main-text-color);
+  border: 1px solid var(--main-border-color);
   width: 228px;
   border-radius: 8px;
 }
@@ -331,4 +335,127 @@ section.more-features {
 .card-link {
   font-size: 0.75rem;
   line-height: 1.25rem;
+}
+
+/* Section - callaction */
+section.callaction {
+  height: 300px;
+  background: url(./images/download-bg-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: var(--main-color-blue);
+}
+.callaction-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.callaction-inner h1 {
+  color: #fff;
+  font-size: 42px;
+  margin-bottom: 40px;
+}
+.callaction-inner a.btn-download {
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+.callaction-inner a.btn-download:hover {
+  background-color: #fff;
+  color: var(--main-border-color);
+}
+
+/* footer */
+footer {
+}
+.footer-inner {
+  max-width: 1376px;
+  margin: auto;
+}
+.sns-outer {
+  padding: 30px 0;
+}
+.sns {
+  font-size: 17px;
+}
+.sns b {
+  font-weight: normal;
+}
+.sns span a {
+  color: var(--main-text-color);
+  margin-left: 5px;
+}
+.sitemap {
+  /* height: 400px; */
+  padding: 50px 0;
+  border-top: 1px solid var(--main-border-color);
+  border-bottom: 1px solid var(--main-border-color);
+}
+.sitemap-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.sitemap-menus {
+  width: 20%;
+  margin: 0;
+}
+.sitemap-title, .sitemap-contents a {
+  display: block;
+  color: var(--main-text-color);
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 1rem;
+  padding-bottom: 16px;
+}
+.copyright {
+  padding-top: 40px;
+  padding-bottom: 11px;
+  margin: auto;
+  display: flex;
+}
+.policy a, .language a {
+  color: var(--main-text-color);
+}
+.logo-footer {
+  flex: 0;
+  margin-right: 55px;
+  margin-bottom: 30px;
+}
+.policy {
+  flex: 2;
+  margin-bottom: 30px;
+}
+.policy a {
+  padding-right: 30px;
+  padding-bottom: 18px;
+}
+.language {
+  flex: 1;
+  margin-bottom: 30px;
+}
+.language a {
+  padding-right: 30px;
+  padding-bottom: 15px;
+}
+.language i {
+  margin-right: 10px;
+}
+.language select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url(./images/icon-select.png);
+  background-repeat: no-repeat;
+  background-position: center right 5px;
+  border: none;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-overflow: ellipsis;
+  appearance: none;
+}
+.language select:focus {
+  border: 2px solid var(--main-color-blue);
+  border-radius: 5px;
 }

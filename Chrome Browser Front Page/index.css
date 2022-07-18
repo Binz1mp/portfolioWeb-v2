@@ -368,12 +368,10 @@ section.callaction {
 
 /* footer */
 footer {
-  padding-left: 32px;
-  padding-right: 32px;
 }
 .footer-inner {
-  max-width: 1376px;
   margin: auto;
+  max-width: 1376px;
 }
 .sns-outer {
   padding: 30px 0;
@@ -462,4 +460,8 @@ footer {
 .language select:focus {
   border: 2px solid var(--main-color-blue);
   border-radius: 5px;
+}
+.sns-outer, .sitemap, .copyright {
+  padding-left: 32px;
+  padding-right: 32px;
 }

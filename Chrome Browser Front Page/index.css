@@ -14,6 +14,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  user-select: none;
 }
 body {
   font-family: 'Open Sans', sans-serif;
@@ -62,39 +63,6 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(4px);
 }
 
-/* Section - feature */
-section.feature {
-  height: 500px;
-  padding: 60px 0;
-  margin: 0 100px;
-}
-section.feature div.inner {
-  height: 100%;
-  max-width: 1296px;
-  display: grid;
-  /* 여긴 flex보단 grid가 더 어울리는 듯하다. */
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 0 auto;
-  gap: 2em;
-}
-section.feature div.desc {
-  margin: 20px 100px;
-}
-section.feature div.desc p {
-  font-size: 15px;
-  font-weight: 500;
-  padding-bottom: 10px;
-}
-section.feature div.photo {
-  height: 100%;
-  overflow: hidden;
-}
-section.feature div.photo img {
-  height: 100%;
-}
-
 /* Header */
 header {
   position: fixed;
@@ -113,6 +81,11 @@ header {
 .download {
   float: right;
   margin-top: 10px;
+  transform: translateX(200px);
+  transition: 0.5s;
+}
+.download.active { 
+  transform: translateX(0);
 }
 
 /* Section - Welcome */
@@ -122,6 +95,8 @@ section.welcome {
   z-index: 0;
   position: relative;
   margin-top: 65px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 section.welcome > .background {
   background-repeat: no-repeat;
@@ -198,48 +173,18 @@ section.welcome > .background > #hero-anim-bottom-left {
   width: 480px;
   margin: 0 auto;
 }
+.statics input[type=checkbox] {
+  transform: scale(1.5);
+}
 .big_pixel_phone {
   /* margin-top: 30px; */
+  width: 100%;
+  margin: auto;
   z-index: 5;
   margin-bottom: 20px;
 }
 .big_pixel_phone > img {
   width: 100%;
-}
-.next-section {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.next-section a {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: block;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-  color: var(--main-text-color);
-  background-color: #fff;
-  text-align: center;
-  font-size: 36px;
-  line-height: 60px;
-}
-@keyframes updown {
-  0% {
-    transform: translateY(-3px);
-  }
-  50% {
-    transform: translateY(3px);
-  }
-  100% {
-    transform: translateY(-3px);
-  }
-}
-.next-section a i {
-  animation-name: updown;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
 }
 
 /* Section - feature */
@@ -248,7 +193,7 @@ section.feature {
   padding: 60px 0;
   margin: 0 75px;
 }
-section.feature div.inner {
+.inner {
   height: 100%;
   max-width: 1296px;
   display: grid;
@@ -259,25 +204,24 @@ section.feature div.inner {
   margin: 0 auto;
   gap: 2em;
 }
-section.feature div.desc {
-  margin: 0px 65px;
+.desc {
+  margin: 20px 100px;
 }
-section.feature div.desc h1 {
+.desc h1 {
   font-size: 2.25rem;
-  line-height: 2.75rem;
+  line-height: 3.15rem;
   padding: 8px 0;
 }
-section.feature div.desc p {
-  font-size: 1rem;
-  line-height: 1.75rem;
+.desc p {
+  font-size: 15px;
   font-weight: 500;
-  margin: 0;
+  padding-bottom: 10px;
 }
-section.feature div.photo {
+.photo {
   height: 100%;
   overflow: hidden;
 }
-section.feature div.photo img {
+.photo img {
   height: 100%;
 }
 
@@ -353,9 +297,11 @@ section.callaction {
   justify-content: center;
 }
 .callaction-inner h1 {
+  text-align: center;
   color: #fff;
   font-size: 42px;
   margin-bottom: 40px;
+  line-height: 42px;
 }
 .callaction-inner a.btn-download {
   background-color: transparent;
@@ -400,6 +346,7 @@ footer {
 .sitemap-menus {
   width: 20%;
   margin: 0;
+  padding: 0 5px;
 }
 .sitemap-title, .sitemap-contents a {
   display: block;
@@ -407,7 +354,11 @@ footer {
   font-weight: 500;
   line-height: 24px;
   font-size: 1rem;
-  padding-bottom: 16px;
+  padding-bottom: 10px;
+}
+.sitemap-title {
+  pointer-events: none;
+  padding-bottom: 20px;
 }
 .copyright {
   padding-top: 40px;
@@ -458,7 +409,7 @@ footer {
   appearance: none;
 }
 .language select:focus {
-  border: 2px solid var(--main-color-blue);
+  outline: 2px solid var(--main-color-blue);
   border-radius: 5px;
 }
 .sns-outer, .sitemap, .copyright {
